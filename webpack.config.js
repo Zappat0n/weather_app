@@ -1,5 +1,10 @@
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const path = require('path');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
@@ -19,6 +24,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[contenthash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[contenthash].css',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'src/assets/icons', to: 'icons' },
+      ],
     }),
   ],
   output: {
@@ -41,13 +51,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(?:ico|gif|png|jpg|svg|jpeg)$/i,
-        type: 'asset',
-        parser: {
-          dataUrlCondition: {
-            maxSize: 4 * 1024, // 4kb
-          },
-        },
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
