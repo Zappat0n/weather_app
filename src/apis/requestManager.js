@@ -4,7 +4,6 @@ import viewHelper from '../views/helper';
 const requests = {
   async getCityWeather(name) {
     const units = document.querySelector('.celsius_input').checked ? 'metric' : 'imperial';
-    console.log(units);
     const request = getCityWeatherRequest(name, units);
     try {
       const response = await fetch(request);

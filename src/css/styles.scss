@@ -32,7 +32,7 @@ h1 {
   font-style: italic;
 }
 
-.container_degrees{
+.container_degrees {
   @include label;
   @include border;
 
