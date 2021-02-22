@@ -5,9 +5,10 @@ const requests = {
     const request = getCityWeatherRequest(name);
     try {
       const response = await fetch(request);
-      console.log(response.json());
+      return response.json();
     } catch (error) {
       console.log(error);
+      return null;
     }
   },
 };
