@@ -19,12 +19,5 @@
   "ignorePatterns": [
     "dist/",
     "build/"
-  ],
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "moduleDirectory": ["node_modules", "src/"]
-      }
-    }
-  }
+  ]
 }
