@@ -7,10 +7,10 @@
 
 This project is taken from [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/weather-app).
 
-In this application, Users can:
+In this application users can:
 - Ask for the weather in any city of the world
-- Get information about the weather, temperature and wind.
-- Temperature information can be displayed in Celsius or Farenheit.
+- Get information about the weather, temperature, and wind.
+- Temperature information can be displayed in Celsius or Fahrenheit.
 
 The application does an API query to OpenWeatherMap to get the information.
 
