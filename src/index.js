@@ -9,7 +9,6 @@ const containerImage = viewHelper().addElement(container, 'div', null, ['contain
 viewHelper().addElement(containerImage, 'h1', 'My Weather App');
 viewHelper().addImage(containerImage, mainImage, 'Sun and Rain', ['main_image']);
 
-const formContainer = viewHelper().addElement(container, 'div', null, ['container_form']);
 mainForm(container).create();
 
-viewHelper().addElement(formContainer, 'div', null, ['container_display']);
+viewHelper().addElement(container, 'div', null, ['container_display']);

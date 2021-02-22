@@ -66,3 +66,10 @@ $font-family: 'Architects Daughter', cursive;
     display: none;
   }
 }
+
+.container_display {
+  background: lightseagreen;
+  font: normal normal 400 1rem/1rem $font-family;
+  padding: 1rem;
+  border-radius: 1rem;
+}
