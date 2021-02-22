@@ -36,7 +36,7 @@ The application does an API query to OpenWeatherMap to get the information.
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://zappat0n.github.io/weather_app/)
 
 
 ## Getting Started
