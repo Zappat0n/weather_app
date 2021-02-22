@@ -1,5 +1,6 @@
 import requests from '../apis/requestManager';
 import display from './display';
+import viewHelper from './helper';
 
 const mainForm = (container) => {
   const addButton = () => {
@@ -7,22 +8,6 @@ const mainForm = (container) => {
     button.setAttribute('type', 'submit');
     button.classList.add('button');
     return button;
-  };
-
-  const addField = () => {
-    const div = document.createElement('div');
-    div.classList.add('form_field');
-    const label = document.createElement('label');
-    label.setAttribute('for', 'location');
-    label.textContent = 'Location';
-    const input = document.createElement('input');
-    input.setAttribute('type', 'text');
-    input.setAttribute('name', 'location');
-    input.setAttribute('id', 'location');
-    input.setAttribute('required', true);
-    div.appendChild(label);
-    div.appendChild(input);
-    return div;
   };
 
   async function requestData(request) {
@@ -35,7 +20,7 @@ const mainForm = (container) => {
     container.appendChild(form);
     form.setAttribute('id', 'main_form');
     form.classList.add('form');
-    form.appendChild(addField());
+    form.appendChild(viewHelper().addField('location', 'Location', 'text', true, null, 'input_location'));
     form.appendChild(addButton());
     form.addEventListener('submit', (e) => {
       e.preventDefault();

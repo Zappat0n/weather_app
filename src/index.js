@@ -1,14 +1,14 @@
 import './css/styles.scss';
-import mainImage from './assets/images/spite_sun_rain.png';
 import viewHelper from './views/helper';
 import mainForm from './views/form';
+import radio from './views/radio';
 
 const body = document.querySelector('body');
 const container = viewHelper().addElement(body, 'div', null, ['container']);
-const containerImage = viewHelper().addElement(container, 'div', null, ['container_image']);
-viewHelper().addElement(containerImage, 'h1', 'My Weather App');
-viewHelper().addImage(containerImage, mainImage, 'Sun and Rain', ['main_image']);
-
+viewHelper().addElement(container, 'h1', 'My Weather App');
+const radioContainer = viewHelper().addElement(container, 'div', null, ['container_degrees']);
+radio(radioContainer).create();
 mainForm(container).create();
 
 viewHelper().addElement(container, 'div', null, ['container_display']);
+viewHelper().addElement(container, 'div', null, ['warnings']);

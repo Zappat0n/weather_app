@@ -1,13 +1,16 @@
 import getCityWeatherRequest from './openweather';
+import viewHelper from '../views/helper';
 
 const requests = {
   async getCityWeather(name) {
-    const request = getCityWeatherRequest(name);
+    const units = document.querySelector('.celsius_input').checked ? 'metric' : 'imperial';
+    console.log(units);
+    const request = getCityWeatherRequest(name, units);
     try {
       const response = await fetch(request);
       return response.json();
     } catch (error) {
-      console.log(error);
+      viewHelper().displayError(error);
       return null;
     }
   },
